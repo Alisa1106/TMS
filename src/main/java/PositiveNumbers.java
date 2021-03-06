@@ -4,9 +4,15 @@ public class PositiveNumbers {
         int secondNumber = 0;
         int thirdNumber = -3;
         int positiveNumbers = 0;
-        if (firstNumber > 0) positiveNumbers++;
-        if (secondNumber > 0) positiveNumbers++;
-        if (thirdNumber > 0) positiveNumbers++;
+        if (firstNumber > 0) {
+            positiveNumbers++;
+        }
+        if (secondNumber > 0) {
+            positiveNumbers++;
+        }
+        if (thirdNumber > 0) {
+            positiveNumbers++;
+        }
         System.out.println("Количество положительных чисел: " + positiveNumbers);
     }
 }

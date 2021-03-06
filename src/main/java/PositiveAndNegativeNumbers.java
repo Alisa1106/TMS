@@ -7,17 +7,17 @@ public class PositiveAndNegativeNumbers {
         int negativeNumbers = 0;
         if (firstNumber > 0) {
             positiveNumbers++;
-        }else if (firstNumber < 0) {
+        } else if (firstNumber < 0) {
             negativeNumbers++;
         }
-        if (secondNumber > 0){
+        if (secondNumber > 0) {
             positiveNumbers++;
-        }else if (secondNumber < 0) {
+        } else if (secondNumber < 0) {
             negativeNumbers++;
         }
         if (thirdNumber > 0) {
             positiveNumbers++;
-        }else if (thirdNumber < 0) {
+        } else if (thirdNumber < 0) {
             negativeNumbers++;
         }
         System.out.println("Количество положительных чисел: " + positiveNumbers + ", отрицательных: "

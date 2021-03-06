@@ -1,7 +1,7 @@
 public class ProgrammersVersionTwo {
     public static void main(String[] args) {
-        int amountOfProgrammers = 3;
-        if (amountOfProgrammers == 1) {
+        int amountOfProgrammers = 1;
+        if (amountOfProgrammers % 10 == 1) {
             System.out.println("Программист");
         } else if (amountOfProgrammers > 1 & amountOfProgrammers < 5){
             System.out.println("Программиста");
