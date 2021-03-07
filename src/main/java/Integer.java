@@ -4,7 +4,7 @@ public class Integer {
         if (integer > 0) {
             integer++;
         } else if (integer < 0) {
-            integer--;
+            integer -= 2;
         } else {
             integer = 10;
         }

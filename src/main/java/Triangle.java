@@ -3,7 +3,7 @@ public class Triangle {
         int a = 25;
         int b = 12;
         int c = 15;
-        if (a >= b + c | b >= a + c | c >= a + b) {
+        if (a >= b + c || b >= a + c || c >= a + b) {
             System.out.println("Такого треугольника не существует!");
         } else {
             System.out.println("Этот треугольник существует!");
