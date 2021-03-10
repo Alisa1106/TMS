@@ -6,6 +6,6 @@ public class SumOfOddNumbers {
                 sumOfOddNumbers += i;
             }
         }
-        System.out.println(sumOfOddNumbers);
+        System.out.println("Сумма всех нечётных чисел от 1 до 99 равна " + sumOfOddNumbers);
     }
 }

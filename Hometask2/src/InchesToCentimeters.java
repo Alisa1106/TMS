@@ -11,7 +11,7 @@ public class InchesToCentimeters {
             } else {
                 System.out.print(" дюймов");
             }
-            System.out.println( " - это " + centimeters + " сантиметра");
+            System.out.println( "  \t " + centimeters + " сантиметра");
             inches++;
         }
     }
