@@ -1,14 +1,17 @@
 public class Triangles {
     public static void main(String[] args) {
-        char star = '*';
-        System.out.println(star);
-        System.out.println(star + " " + star);
-        System.out.println(star + " " + star + " " + star);
-        System.out.println(star + " " + star + " " + star + " " + star);
-        System.out.println();
-        System.out.println(star + " " + star + " " + star + " " + star);
-        System.out.println(star + " " + star + " " + star);
-        System.out.println(star + " " + star);
-        System.out.println(star);
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        System.out.print('\n');
+        for (int i = 0; i < 4; i++) {
+            for (int j = i; j < 4; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 }
