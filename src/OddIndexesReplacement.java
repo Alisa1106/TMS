@@ -1,4 +1,4 @@
-public class OddIndexesReplacement_4 {
+public class OddIndexesReplacement {
     public static void main(String[] args) {
         int[] intArray = new int[20];
         for (int i = 0; i < intArray.length; i++) {
@@ -14,3 +14,7 @@ public class OddIndexesReplacement_4 {
         }
     }
 }
+//)Создайте массив из 20 случайных целых чисел из отрезка [0;20]. Выведите
+//        массив на экран в строку. Замените каждый элемент с нечётным индексом на
+//        ноль. Снова выведете массив на экран на отдельной строке.
+

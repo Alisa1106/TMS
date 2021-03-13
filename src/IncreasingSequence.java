@@ -1,4 +1,4 @@
-public class IncreasingSequence_6 {
+public class IncreasingSequence {
     public static void main(String[] args) {
         int[] intArray = new int[4];
         boolean found = true;
@@ -20,3 +20,6 @@ public class IncreasingSequence_6 {
         }
     }
 }
+//    Создайте массив из 4 случайных целых чисел из отрезка [0;10], выведите его
+//        на экран в строку. Определить и вывести на экран сообщение о том, является ли
+//        массив строго возрастающей последовательностью.

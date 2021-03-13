@@ -1,4 +1,4 @@
-public class MaxElement_7 {
+public class MaxElement {
     public static void main(String[] args) {
         int[] intArray = new int[12];
         int maxElement = -1;
@@ -15,3 +15,6 @@ public class MaxElement_7 {
         System.out.println("Самый большой элемент массива: " + maxElement + ", его индекс: " + maxElementIndex);
     }
 }
+//    Создайте массив из 12 случайных целых чисел из отрезка [0;15]. Определите
+//        какой элемент является в этом массиве максимальным и сообщите индекс его
+//        последнего вхождения в массив.
