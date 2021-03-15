@@ -3,13 +3,13 @@ public class TwoArrays {
         int[] firstArray = new int[5];
         int[] secondArray = new int[5];
         double sumFirstArrayElements = 0;
-        double sumSecondArrayElements = 0;
         for (int i = 0; i < firstArray.length; i++) {
             firstArray[i] = (int) (Math.random() * 16);
             sumFirstArrayElements += firstArray[i];
             System.out.print(firstArray[i] + " \t");
         }
         System.out.println("\n");
+        double sumSecondArrayElements = 0;
         for (int i = 0; i < secondArray.length; i++) {
             secondArray[i] = (int) (Math.random() * 16);
             sumSecondArrayElements += secondArray[i];

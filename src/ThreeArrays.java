@@ -2,8 +2,6 @@ public class ThreeArrays {
     public static void main(String[] args) {
         int[] firstArray = new int[10];
         int[] secondArray = new int[10];
-        double[] thirdArray = new double[10];
-        int amountOfIntegers = 0;
         for (int i = 0; i < firstArray.length; i++) {
             firstArray[i] = (int) (Math.random() * 10);
             System.out.print(firstArray[i] + " \t");
@@ -14,6 +12,8 @@ public class ThreeArrays {
             System.out.print(secondArray[i] + " \t");
         }
         System.out.println("\n");
+        double[] thirdArray = new double[10];
+        int amountOfIntegers = 0;
         for (int i = 0; i < thirdArray.length; i++) {
             thirdArray[i] = (double) firstArray[i] / secondArray[i];
             System.out.print(thirdArray[i] + " \t");

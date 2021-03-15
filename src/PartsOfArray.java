@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class PartsOfArray {
     public static void main(String[] args) {
-        int sumLeftPart = 0;
-        int sumRightPart = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите чётное положительное число: ");
         int arraySize = scanner.nextInt();
@@ -17,10 +15,12 @@ public class PartsOfArray {
             System.out.print(intArray[i] + " ");
         }
         System.out.println();
+        int sumLeftPart = 0;
         for (int i = 0; i < intArray.length / 2; i++) {
             sumLeftPart += intArray[i];
         }
         System.out.println();
+        int sumRightPart = 0;
         for (int i = arraySize - 1; i >= intArray.length / 2; i--) {
             sumRightPart += intArray[i];
         }
