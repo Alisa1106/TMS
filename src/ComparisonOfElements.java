@@ -6,14 +6,13 @@ public class ComparisonOfElements {
             System.out.print(intArray[i] + "\t");
         }
         System.out.println("\n");
-        int intArrayElement = 0;
         boolean found = true;
-        for (int i = 1; i < intArray.length; i++) {
-            if (intArray[intArrayElement] == intArray[i]) {
-                found = false;
-                break;
-            } else {
-                intArrayElement++;
+        for (int i = 0; i < intArray.length; i++) {
+            for (int j = 0; j < intArray.length; j++) {      //ничего лучше не придумала)
+                if (intArray[j] == intArray[i] && j != i) {
+                    found = false;
+                    break;
+                }
             }
         }
         if (found) {

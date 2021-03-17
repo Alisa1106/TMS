@@ -16,8 +16,8 @@ public class SmallestOddElement {
             if (intArray[i] % 2 != 0) {
                 oddArrayIndex++;
                 oddIntArray[oddArrayIndex] = intArray[i];
-                }
             }
+        }
         int minOddElement = oddIntArray[0];
         for (int i = 0; i < oddIntArray.length; i++) {
             if (oddIntArray[i] < minOddElement) {
