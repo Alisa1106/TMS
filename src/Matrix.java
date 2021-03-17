@@ -36,13 +36,8 @@ public class Matrix {
         int productElementsMajorDiagonal = 1;
         int productElementsSecondaryDiagonal = 1;
         for (int i = 0; i < arraysSize; i++) {
-            for (int j = 0; j < arraysSize; j++) {
-                if (i == j) {
-                    productElementsMajorDiagonal *= matrix[i][j];
-                } else if (i + j + 1 == arraysSize) {
-                    productElementsSecondaryDiagonal *= matrix[i][j];
-                }
-            }
+            productElementsMajorDiagonal *= matrix[i][i];
+            productElementsSecondaryDiagonal *= matrix[i][arraysSize - i - 1];
         }
         if (productElementsMajorDiagonal > productElementsSecondaryDiagonal) {
             System.out.println("Произведение элементов главной диагонали больше," +
@@ -53,16 +48,16 @@ public class Matrix {
         } else  {
             System.out.println("Произведения диагоналей равны" + "\n");
         }
-        int sumEvenElementsAboveMajorDiagonal = 0;
+        int sumEvenElementsAboveSecondaryDiagonal = 0;
         for (int i = 0; i < arraysSize; i++) {
-            for (int j = 1; j > i && j < arraysSize; j++) {
+            for (int j = 0; j < arraysSize - i - 1; j++) {
                 if (matrix[i][j] % 2 == 0) {
-                    sumEvenElementsAboveMajorDiagonal += matrix[i][j];
+                    sumEvenElementsAboveSecondaryDiagonal += matrix[i][j];
                 }
             }
         }
-        System.out.println("Сумма чётных элементов, стоящих над главной диагональю равна: "
-                + sumEvenElementsAboveMajorDiagonal + "\n");
+        System.out.println("Сумма чётных элементов, стоящих над побочной диагональю равна: "
+                + sumEvenElementsAboveSecondaryDiagonal + "\n");
         System.out.println("Транспонированная матрица: ");
         int[][] newMatrix = new int[arraysSize][arraysSize];
         for (int i = 0; i < arraysSize; i++) {
