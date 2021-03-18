@@ -6,7 +6,8 @@ public class Computer {
     int ram;
     int hdd;
     int fullCycleLife;
-    boolean computerIsOn = false;
+    int counterOfOn = 0;
+    int counterOfOff = 0;
 
     public Computer(String processor, int ram, int hdd, int fullCycleLife) {
         this.processor = processor;
@@ -47,7 +48,7 @@ public class Computer {
 
      void turnOn() {
         if (checkFailure()) {
-            computerIsOn = true;
+            counterOfOn++;
             System.out.println("Добро пожаловать!");
         } else if (isFailure()) {
             System.out.println("Компьютер сгорел(((");
@@ -58,26 +59,19 @@ public class Computer {
 
      void turnOff() {
         if (checkFailure()) {
-            computerIsOn = false;
+            counterOfOff++;
             System.out.println("Завершение работы...");
         } else if (isFailure()) {
-            System.out.println("Компьютер сгорел)))");
+            System.out.println("Компьютер сгорел(((");
         } else {
-            computerIsOn = false;
+            counterOfOff++;
             System.out.println("Завершение работы...");
         }
     }
 
     boolean checkResourceOfWork() {
-        int counterOfOn = 0;
-        int counterOfOff = 0;
         boolean exceedingResourceOfWork = false;
-        if (computerIsOn == true) {
-            counterOfOn++;
-        } else {
-            counterOfOff++;
-        }
-        if (counterOfOn > fullCycleLife || counterOfOff > fullCycleLife) {
+        if (counterOfOn >= fullCycleLife && counterOfOff >= fullCycleLife) {
             exceedingResourceOfWork = true;
         }
         return exceedingResourceOfWork;
