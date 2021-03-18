@@ -4,6 +4,5 @@ public class Main {
                 8, 1, 500_000);
         computer.specification();
         computer.turnOn();
-        computer.turnOff();
     }
 }
