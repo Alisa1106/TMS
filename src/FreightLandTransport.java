@@ -28,9 +28,6 @@ public class FreightLandTransport extends LandTransport {
             System.out.println("Грузовик загружен\n");
             return;
         }
-        if (freightWeight > capacity) {
-            System.out.println("Вам нужен грузовик побольше\n");
-            return;
-        }
+        System.out.println("Вам нужен грузовик побольше\n");
     }
 }
