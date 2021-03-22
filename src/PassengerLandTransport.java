@@ -28,7 +28,7 @@ public class PassengerLandTransport extends LandTransport {
         this.maxAmountOfPassengers = maxAmountOfPassengers;
     }
 
-    void getDistance() {
+    void printDistanceAndFuelConsumptionPerTravel() {
         System.out.print("Введите время поездки: ");
         double travelTime = scanner.nextDouble();
         double distance = getMaximumSpeed() * travelTime;
