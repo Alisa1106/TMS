@@ -32,16 +32,23 @@ public class MilitaryPlane extends AirTransport {
     void shot() {
         if (amountOfMissilesOnBoard > 0) {
             System.out.println("Ракета пошла...\n");
-        } else {
+            amountOfMissilesOnBoard--;
+            return;
+        }
+        if (amountOfMissilesOnBoard == 0) {
             System.out.println("Боеприпасы отсутствуют\n");
+            return;
         }
     }
 
     void ejection() {
         if (ejectionSystem) {
             System.out.println("Катапультирование прошло успешно!\n");
-        } else {
+            return;
+        }
+        if (!ejectionSystem) {
             System.out.println("У вас нет такой системы\n");
+            return;
         }
     }
 }

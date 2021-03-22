@@ -22,12 +22,15 @@ public class FreightLandTransport extends LandTransport {
     }
 
     void capacityCheck() {
-        System.out.print("Введите массу груза: ");
+        System.out.print("Введите массу груза в тоннах: ");
         double freightWeight = scanner.nextDouble();
         if (freightWeight <= capacity) {
             System.out.println("Грузовик загружен\n");
-        } else {
+            return;
+        }
+        if (freightWeight > capacity) {
             System.out.println("Вам нужен грузовик побольше\n");
+            return;
         }
     }
 }

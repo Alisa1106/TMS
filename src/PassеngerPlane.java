@@ -20,8 +20,11 @@ public class PassеngerPlane extends AirTransport {
         System.out.println("Вмещает пассажиров: " + maxAmountOfPassengers);
         if (businessClass) {
             System.out.println("Есть бизнес-класс\n");
-        } else {
+            return;
+        }
+        if (!businessClass) {
             System.out.println("Бизнес-класс отсутствует\n");
+            return;
         }
     }
 
@@ -37,8 +40,11 @@ public class PassеngerPlane extends AirTransport {
         int amountOfPassengers = scanner.nextInt();
         if (amountOfPassengers <= maxAmountOfPassengers) {
             System.out.println("Посадка пассажиров завершена\n");
-        } else {
+            return;
+        }
+        if (amountOfPassengers > maxAmountOfPassengers) {
             System.out.println("Вам нужен самолёт побольше\n");
+            return;
         }
     }
 }
