@@ -19,7 +19,5 @@ public class Main {
         passengerPlane.passengerCapacityCheck();
         militaryPlane.shot();
         militaryPlane.ejection();
-
-
     }
 }
