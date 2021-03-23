@@ -2,92 +2,72 @@ import java.util.Scanner;
 
 public class Computer {
 
-    String processor;
+    String cpu;
     int ram;
-    int hdd;
-    int fullCycleLife;
-    int counterOfOn = 0;
-    int counterOfOff = 0;
+    int ssd;
+    int workCyclesRemaining;
+    boolean turnedOn = false;
+    boolean broken = false;
+    Scanner scanner = new Scanner(System.in);
 
-    public Computer(String processor, int ram, int hdd, int fullCycleLife) {
-        this.processor = processor;
+    public Computer(String cpu, int ram, int ssd, int workCyclesRemaining) {
+        this.cpu = cpu;
         this.ram = ram;
-        this.hdd = hdd;
-        this.fullCycleLife = fullCycleLife;
+        this.ssd = ssd;
+        this.workCyclesRemaining = workCyclesRemaining;
     }
 
-    void specification() {
-        System.out.println("Процессор: " + processor + "\nОперативка: " + ram
-                + "\nОбъём жёсткого диска: " + hdd + "\nРесурс полных циклов работы: " +fullCycleLife);
+    void printSpecification() {
+        System.out.println("Процессор: " + cpu + "\nОперативка: " + ram
+                + "\nОбъём жёсткого диска: " + ssd + "\nРесурс полных циклов работы: " + workCyclesRemaining);
     }
 
-    boolean checkFailure() {
-        boolean result = true;
-        int random = (int) (Math.random() * 5);
-        if (random == 0) {
-            result = false;
+    void turnOn() {
+        if (broken) {
+            System.out.println("Компьютер сгорел(((");
+            return;
         }
-        return result;
-    }
-
-    boolean isFailure() {
-        int random = (int) (Math.random() * 1);
-        Scanner scanner = new Scanner(System.in);
+        if (workCyclesRemaining == 0) {
+            System.out.println("Ресурс работы исчерпан, компьютер сгорел");
+            return;
+        }
+        if (turnedOn) {
+            System.out.println("Компьютер включён!");
+            return;
+        }
+        int random = (int) (Math.random() * 2);
+        System.out.println(random);
         System.out.print("Произошёл сбой. Введите число 0 или 1: ");
         int enteredNumber = scanner.nextInt();
-        while (enteredNumber < 0 || enteredNumber > 1) {
-            System.out.print("Вы ввели некорректное число. Повторите ввод: ");
-            enteredNumber = scanner.nextInt();
-        }
-        boolean broken = false;
-        if (random != enteredNumber || checkResourceOfWork()) {
-            broken = true;
-        }
-        return broken;
-    }
-
-     void turnOn() {
-        if (checkFailure()) {
-            counterOfOn++;
+        if (enteredNumber == random) {
+            turnedOn = true;
             System.out.println("Добро пожаловать!");
-        } else if (isFailure()) {
-            System.out.println("Компьютер сгорел(((");
         } else {
-            turnOff();
+            broken = true;
+            System.out.println("Компьютер сгорел(((");
         }
     }
 
-     void turnOff() {
-        if (checkFailure()) {
-            counterOfOff++;
-            System.out.println("Завершение работы...");
-        } else if (isFailure()) {
+    void turnOff() {
+        if (broken) {
             System.out.println("Компьютер сгорел(((");
-        } else {
-            counterOfOff++;
+            return;
+        }
+        if (!turnedOn) {
+            System.out.println("Компьютер выключен!");
+            return;
+        }
+        int random = (int) (Math.random() * 2);
+        System.out.println(random);
+        System.out.print("Произошёл сбой. Введите число 0 или 1: ");
+        int enteredNumber = scanner.nextInt();
+        if (enteredNumber == random) {
+            turnedOn = false;
+            workCyclesRemaining--;
             System.out.println("Завершение работы...");
+        } else {
+            broken = true;
+            System.out.println("Компьютер сгорел(((");
         }
-    }
-
-    boolean checkResourceOfWork() {
-        boolean exceedingResourceOfWork = false;
-        if (counterOfOn >= fullCycleLife && counterOfOff >= fullCycleLife) {
-            exceedingResourceOfWork = true;
-        }
-        return exceedingResourceOfWork;
     }
 }
-//    Создать класс компьютер.
-//        Поля:
-//        - процессор
-//        - оперативка
-//        - жесткий диск
-//        - ресурс полных циклов работы (включений/выключений)
-//        Методы:
-//        - метод описание(вывод всех полей)
-//        - метод включить, при включении может произойти сбой, при вывзове метода
-//        рандом загадывает число (0 либо 1), вы вводите число с клавиатуры, если
-//        угадали комп выключается, если нет сгорает.Если комп сгорел, при попытке
-//        включить нужно выдать сообщение что ему конец
-//        - выключить (аналогично включению)
-//        - при превышении лимита ресурса комп сгорает
