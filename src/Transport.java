@@ -21,7 +21,7 @@ public abstract class Transport {
         return brand;
     }
 
-    void printInformation() {
+    public void printInformation() {
         System.out.println("Мощность двигателя: " + power + " лс.");
         System.out.println("Мощность в киловаттах: " + getPowerInKilowatts(power) + " кВт.");
         System.out.println("Максимальная скорость: " + maximumSpeed + " км/ч.");
@@ -36,8 +36,7 @@ public abstract class Transport {
         this.brand = brand;
     }
 
-    double getPowerInKilowatts(double power) {
-        double powerInKilowatts = power * 0.74;
-        return powerInKilowatts;
+    private double getPowerInKilowatts(double power) {
+        return power * 0.74;
     }
 }

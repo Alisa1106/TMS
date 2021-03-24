@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class PassengerLandTransport extends LandTransport {
 
     private String bodyType;
     private int maxAmountOfPassengers;
-    Scanner scanner = new Scanner(System.in);
+    private double travelTime;
 
     public String getBodyType() {
         return bodyType;
@@ -14,8 +12,12 @@ public class PassengerLandTransport extends LandTransport {
         return maxAmountOfPassengers;
     }
 
+    public double getTravelTime() {
+        return travelTime;
+    }
+
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         System.out.println("Тип кузова: " + bodyType);
         System.out.println("Вмещает пассажиров: " + maxAmountOfPassengers + "\n");
@@ -28,9 +30,7 @@ public class PassengerLandTransport extends LandTransport {
         this.maxAmountOfPassengers = maxAmountOfPassengers;
     }
 
-    void printDistanceAndFuelConsumptionPerTravel() {
-        System.out.print("Введите время поездки: ");
-        double travelTime = scanner.nextDouble();
+    public void printDistanceAndFuelConsumptionPerTravel(double travelTime) {
         double distance = getMaximumSpeed() * travelTime;
         System.out.println("За время " + travelTime + " ч. автомобиль " + getBrand()
                 + " двигаясь с максимальной скоростью " + getMaximumSpeed() + " км/ч. проедет " + distance
@@ -38,7 +38,6 @@ public class PassengerLandTransport extends LandTransport {
     }
 
     private double getFuelConsumptionPerTravel(double distance) {
-        double fuelConsumptionPerTravel = getFuelConsumption() / 100 * distance;
-        return fuelConsumptionPerTravel;
+        return getFuelConsumption() / 100 * distance;
     }
 }

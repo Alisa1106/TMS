@@ -12,7 +12,7 @@ public abstract class LandTransport extends Transport {
     }
 
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         System.out.println("Количество колёс: " + amountOfWheels);
         System.out.println("Расход топлива: " + fuelConsumption + " л/100 км.");

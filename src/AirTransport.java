@@ -12,7 +12,7 @@ public abstract class AirTransport extends Transport {
     }
 
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         System.out.println("Размах крыльев: " + wingspan + " м.");
         System.out.println("Минимальная длина взлётно-посадочной полосы, необходимая для взлёта: "

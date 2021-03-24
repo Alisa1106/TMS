@@ -1,16 +1,18 @@
-import java.util.Scanner;
-
 public class FreightLandTransport extends LandTransport {
 
     private double capacity;
-    Scanner scanner = new Scanner(System.in);
+    private double freightWeight;
 
     public double getCapacity() {
         return capacity;
     }
 
+    public double getFreightWeight() {
+        return freightWeight;
+    }
+
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         System.out.println("Грузоподъёмность: " + capacity + " т.\n");
     }
@@ -21,13 +23,11 @@ public class FreightLandTransport extends LandTransport {
         this.capacity = capacity;
     }
 
-    void capacityCheck() {
-        System.out.print("Введите массу груза в тоннах: ");
-        double freightWeight = scanner.nextDouble();
+    public void capacityCheck(double freightWeight) {
         if (freightWeight <= capacity) {
             System.out.println("Грузовик загружен\n");
-            return;
+        } else {
+            System.out.println("Вам нужен грузовик побольше\n");
         }
-        System.out.println("Вам нужен грузовик побольше\n");
     }
 }

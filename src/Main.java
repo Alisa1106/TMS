@@ -14,9 +14,9 @@ public class Main {
         truck.printInformation();
         passengerPlane.printInformation();
         militaryPlane.printInformation();
-        car.printDistanceAndFuelConsumptionPerTravel();
-        truck.capacityCheck();
-        passengerPlane.passengerCapacityCheck();
+        car.printDistanceAndFuelConsumptionPerTravel(2.5);
+        truck.capacityCheck(200);
+        passengerPlane.passengerCapacityCheck(100);
         militaryPlane.shot();
         militaryPlane.ejection();
     }

@@ -12,7 +12,7 @@ public class MilitaryPlane extends AirTransport {
     }
 
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         if (ejectionSystem) {
             System.out.println("Имеет систему катапультирования");
@@ -29,20 +29,20 @@ public class MilitaryPlane extends AirTransport {
         this.amountOfMissilesOnBoard = amountOfMissilesOnBoard;
     }
 
-    void shot() {
+    public void shot() {
         if (amountOfMissilesOnBoard > 0) {
             System.out.println("Ракета пошла...\n");
             amountOfMissilesOnBoard--;
-            return;
+        } else {
+            System.out.println("Боеприпасы отсутствуют\n");
         }
-        System.out.println("Боеприпасы отсутствуют\n");
     }
 
-    void ejection() {
+    public void ejection() {
         if (ejectionSystem) {
             System.out.println("Катапультирование прошло успешно!\n");
-            return;
+        } else {
+            System.out.println("У вас нет такой системы\n");
         }
-        System.out.println("У вас нет такой системы\n");
     }
 }

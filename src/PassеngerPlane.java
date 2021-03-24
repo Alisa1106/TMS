@@ -1,10 +1,8 @@
-import java.util.Scanner;
-
 public class PassеngerPlane extends AirTransport {
 
     private int maxAmountOfPassengers;
     private boolean businessClass;
-    Scanner scanner = new Scanner(System.in);
+    private int amountOfPassengers;
 
     public int getMaxAmountOfPassengers() {
         return maxAmountOfPassengers;
@@ -15,7 +13,7 @@ public class PassеngerPlane extends AirTransport {
     }
 
     @Override
-    void printInformation() {
+    public void printInformation() {
         super.printInformation();
         System.out.println("Вмещает пассажиров: " + maxAmountOfPassengers);
         if (businessClass) {
@@ -32,13 +30,11 @@ public class PassеngerPlane extends AirTransport {
         this.businessClass = businessClass;
     }
 
-    void passengerCapacityCheck() {
-        System.out.print("Введите количество пассажиров: ");
-        int amountOfPassengers = scanner.nextInt();
+    public void passengerCapacityCheck(int amountOfPassengers) {
         if (amountOfPassengers <= maxAmountOfPassengers) {
             System.out.println("Посадка пассажиров завершена\n");
-            return;
+        } else {
+            System.out.println("Вам нужен самолёт побольше\n");
         }
-        System.out.println("Вам нужен самолёт побольше\n");
     }
 }
