@@ -12,7 +12,7 @@ public class Spaceport {
         }
     }
 
-    public void countDown() {
+    private void countDown() {
         for (int i = 10; i > 0; i--) {
             System.out.print(i + "... ");
         }

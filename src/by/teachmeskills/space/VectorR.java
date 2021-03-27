@@ -5,10 +5,7 @@ public class VectorR implements IStart {
     @Override
     public boolean preLaunchCheck() {
         int random = (int) (Math.random() * 11);
-        if (random % 2 == 0) {
-            return true;
-        }
-        return false;
+        return random % 2 == 0;
     }
 
     @Override

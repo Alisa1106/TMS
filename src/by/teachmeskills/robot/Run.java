@@ -42,19 +42,18 @@ public class Run {
         robots[0] = robot1;
         robots[1] = robot2;
         robots[2] = robot3;
-        System.out.println("Самый дорогой робот - " + robots[findMostExpensive(robots)].getName());
+
+        System.out.println("Самый дорогой робот - " + findMostExpensive(robots).getName());
     }
 
-    public static int findMostExpensive(Robot[] robots) {
-        int biggestPrice = robots[0].getPrice();
-        int biggestPriceIndex = 0;
-        for (int i = 0; i < robots.length; i++) {
-            if (robots[i].getPrice() > biggestPrice) {
-                biggestPrice = robots[i].getPrice();
-                biggestPriceIndex = i;
+    public static Robot findMostExpensive(Robot[] robots) {
+        Robot mostExpensiveRobot = robots[0];
+        for (Robot robot : robots) {
+            if (robot.getPrice() > mostExpensiveRobot.getPrice()) {
+                mostExpensiveRobot = robot;
             }
         }
-        return biggestPriceIndex;
+        return mostExpensiveRobot;
     }
 }
  /*

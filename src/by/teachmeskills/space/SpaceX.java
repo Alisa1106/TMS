@@ -5,10 +5,7 @@ public class SpaceX implements IStart {
     @Override
     public boolean preLaunchCheck() {
         int random = (int) (Math.random() * 100);
-        if (random > 10 && random < 70) {
-            return true;
-        }
-        return false;
+        return (random > 10 && random < 70);
     }
 
     @Override
