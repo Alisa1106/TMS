@@ -1,7 +1,7 @@
 public class TextFormater {
 
     public static int getAmountOfWordsInLine(String element) {
-        int count = 1;
+        int count = 0;
         for (int i = 0; i < element.length(); i++) {
             if (element.charAt(i) == ' ') {
                 count++;

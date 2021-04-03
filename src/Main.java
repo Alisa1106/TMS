@@ -25,15 +25,22 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/new text"))) {
-            for (String element : text) {
-                if (TextFormater.getAmountOfWordsInLine(element) >= 3 && TextFormater.getAmountOfWordsInLine(element)
-                        <= 5 || TextFormater.isPalindrom(element)) {
-                    writer.write(element + "\n");
-                }
+        String[] sentences;
+        String[] tеxtArray = text.toArray(new String[text.size()]);
+        for (String s : tеxtArray) {
+            sentences = s.split("[.!?]");
+            for (int j = 0; j < sentences.length; j++) {
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/new text"))) {
+                for (String element : sentences) {
+                    if (TextFormater.getAmountOfWordsInLine(element) >= 3 && TextFormater.getAmountOfWordsInLine(element)
+                            <= 5 || TextFormater.isPalindrom(element)) {
+                        writer.write(element + "\n");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }
