@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 
 public class Application {
 
-    private boolean on = true;
+    private boolean open = true;
 
     public void start() {
 
@@ -16,7 +16,7 @@ public class Application {
         shop.addGoods(goods2);
         shop.addGoods(goods3);
         shop.addGoods(goods4);
-        while (on) {
+        while (open) {
             Scanner scanner = new Scanner(System.in);
             try {
                 System.out.print("Выберите действие: \n1 - Вывод всех товаров\n2 - Добавление товара\n" +
@@ -76,7 +76,7 @@ public class Application {
                         shop.editGoodsList(goods7);
                         break;
                     case 5:
-                        on = false;
+                        open = false;
                         System.out.println("Вы покинули магазин.");
                         break;
                 }
