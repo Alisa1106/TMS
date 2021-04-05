@@ -10,11 +10,11 @@ public class TextFormatter {
         return count;
     }
 
-    public static boolean isPalindrom(String element) {
-        String[] words = element.split(" ");
+    public static boolean containsPalindrom(String element) {
+        String[] words = element.trim().split(" ");
         for (String word : words) {
             String reverse = new StringBuilder(word).reverse().toString();
-            if (word.equals(reverse) && word.length() > 0) {
+            if (word.equals(reverse)) {
                 return true;
             }
         }

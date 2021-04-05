@@ -34,7 +34,7 @@ public class Main {
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/new text"))) {
                 for (String element : sentences) {
                     if (TextFormatter.getAmountOfWordsInLine(element) >= 3 && TextFormatter.getAmountOfWordsInLine(element)
-                            <= 5 || TextFormatter.isPalindrom(element)) {
+                            <= 5 || TextFormatter.containsPalindrom(element)) {
                         writer.write(element + ".\n");
                     }
                 }
