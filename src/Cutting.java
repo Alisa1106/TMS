@@ -1,11 +1,9 @@
 public class Cutting {
 
     public static String cut(String string) {
-        int from = string.indexOf('A');
-        int to = string.lastIndexOf('B');
-        String cutOut = string.substring(from, to + 1);
-        String replacement = "";
-        return string.replace(cutOut, replacement);
+
+        String cutOut = string.substring(string.indexOf('A'), string.lastIndexOf('B') + 1);
+        return string.replace(cutOut, "");
     }
 }
 //) Вырезать подстроку из строки начиная с первого вхождения символа(А) до,

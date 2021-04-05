@@ -33,9 +33,9 @@ public class Main {
             }
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/new text"))) {
                 for (String element : sentences) {
-                    if (TextFormater.getAmountOfWordsInLine(element) >= 3 && TextFormater.getAmountOfWordsInLine(element)
-                            <= 5 || TextFormater.isPalindrom(element)) {
-                        writer.write(element + "\n");
+                    if (TextFormatter.getAmountOfWordsInLine(element) >= 3 && TextFormatter.getAmountOfWordsInLine(element)
+                            <= 5 || TextFormatter.isPalindrom(element)) {
+                        writer.write(element + ".\n");
                     }
                 }
             } catch (Exception e) {

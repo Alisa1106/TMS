@@ -1,7 +1,7 @@
-public class TextFormater {
+public class TextFormatter {
 
     public static int getAmountOfWordsInLine(String element) {
-        int count = 0;
+        int count = 1;
         for (int i = 0; i < element.length(); i++) {
             if (element.charAt(i) == ' ') {
                 count++;
@@ -11,15 +11,14 @@ public class TextFormater {
     }
 
     public static boolean isPalindrom(String element) {
-        boolean result = false;
         String[] words = element.split(" ");
         for (String word : words) {
             String reverse = new StringBuilder(word).reverse().toString();
-            if (word.equals(reverse) && word.length() > 1) {
-                result = true;
+            if (word.equals(reverse) && word.length() > 0) {
+                return true;
             }
         }
-        return result;
+        return false;
     }
 }
 //)Текстовый файл содержит текст. После запуска программы в другой файл
