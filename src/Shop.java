@@ -1,15 +1,14 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 
 public class Shop {
 
     Map<Integer, Goods> goodsList = new HashMap<>();
-    HashSet<Integer> keySet = new HashSet<>();
 
     public void addGoods(Goods goods) {
-        if (keySet.add(goods.getId())) {
+        if (!goodsList.keySet().contains(goods.getId())) {
             goodsList.put(goods.getId(), goods);
             System.out.println("Товар добавлен.");
         } else {
@@ -31,7 +30,7 @@ public class Shop {
     }
 
     public void editGoodsList(Goods goods) {
-        if (!keySet.add(goods.getId())) {
+        if (goodsList.keySet().contains(goods.getId())) {
             goodsList.put(goods.getId(), goods);
             System.out.println("Товар отредактирован.");
         } else {

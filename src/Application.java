@@ -8,14 +8,10 @@ public class Application {
     public void start() {
 
         Shop shop = new Shop();
-        Goods goods1 = new Goods(1, "Phone", 1_000);
-        Goods goods2 = new Goods(2, "Laptop", 3_000);
-        Goods goods3 = new Goods(3, "Computer", 2_800);
-        Goods goods4 = new Goods(1, "Phone", 2_000);
-        shop.addGoods(goods1);
-        shop.addGoods(goods2);
-        shop.addGoods(goods3);
-        shop.addGoods(goods4);
+        shop.addGoods(new Goods(1, "Phone", 1_000));
+        shop.addGoods(new Goods(2, "Laptop", 3_000));
+        shop.addGoods(new Goods(3, "Computer", 2_800));
+        shop.addGoods(new Goods(1, "Phone", 2_000));
         while (open) {
             Scanner scanner = new Scanner(System.in);
             try {
@@ -45,7 +41,7 @@ public class Application {
                                         (Goods::getPrice).reversed()).collect(Collectors.toList()));
                                 break;
                             case 3:
-                                ArrayList<String> copyOfList = (ArrayList<String>) shop.getGoodsList().clone();
+                                List<String> copyOfList = (ArrayList<String>) shop.getGoodsList().clone();
                                 Collections.reverse(copyOfList);
                                 System.out.println(copyOfList);
                                 break;
