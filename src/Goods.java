@@ -12,6 +12,10 @@ public class Goods {
         this.price = price;
     }
 
+    public Goods(int id) {
+        this.id = id;
+    }
+
     public Goods() {
 
     }

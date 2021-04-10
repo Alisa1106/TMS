@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Shop {
 
-    Map<Integer, Goods> goodsList = new HashMap<>();
+    Set<Goods> goodsList = new HashSet<>();
 
     public void addGoods(Goods goods) {
-        if (!goodsList.containsKey(goods.getId())) {
-            goodsList.put(goods.getId(), goods);
+        if (goodsList.add(goods)) {
             System.out.println("Товар добавлен.");
         } else {
             System.out.println("Товар с таким ID уже существует!");
@@ -16,12 +13,12 @@ public class Shop {
     }
 
     public ArrayList<Goods> getGoodsList() {
-        return new ArrayList<>(goodsList.values());
+        return new ArrayList<>(goodsList);
     }
 
     public void deleteGoods(int id) {
-        if (goodsList.containsKey(id)) {
-            goodsList.remove(id);
+        Goods goods = new Goods(id);
+        if (goodsList.remove(goods)) {
             System.out.println("Товар удалён");
         } else {
             System.out.println("Товар с таким ID отсутствует");
@@ -29,8 +26,7 @@ public class Shop {
     }
 
     public void editGoodsList(Goods goods) {
-        if (goodsList.containsKey(goods.getId())) {
-            goodsList.put(goods.getId(), goods);
+        if (goodsList.remove(goods) && goodsList.add(goods)) {
             System.out.println("Товар отредактирован.");
         } else {
             System.out.println("Товар с таким ID отсутствует");

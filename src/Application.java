@@ -3,8 +3,6 @@ import java.util.stream.Collectors;
 
 public class Application {
 
-    private boolean open = true;
-
     public void start() {
 
         Shop shop = new Shop();
@@ -12,7 +10,7 @@ public class Application {
         shop.addGoods(new Goods(2, "Laptop", 3_000));
         shop.addGoods(new Goods(3, "Computer", 2_800));
         shop.addGoods(new Goods(1, "Phone", 2_000));
-        while (open) {
+        while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
                 System.out.print("Выберите действие: \n1 - Вывод всех товаров\n2 - Добавление товара\n" +
@@ -41,7 +39,7 @@ public class Application {
                                         (Goods::getPrice).reversed()).collect(Collectors.toList()));
                                 break;
                             case 3:
-                                List<String> copyOfList = (ArrayList<String>) shop.getGoodsList().clone();
+                                List<Goods> copyOfList = (ArrayList<Goods>) shop.getGoodsList().clone();
                                 Collections.reverse(copyOfList);
                                 System.out.println(copyOfList);
                                 break;
@@ -72,11 +70,10 @@ public class Application {
                         shop.editGoodsList(goods7);
                         break;
                     case 5:
-                        open = false;
                         System.out.println("Вы покинули магазин.");
-                        break;
+                        return;
                 }
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Вы ввели недопустимые символы!");
             }
         }
